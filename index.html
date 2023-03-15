@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Fireworks</title>
+    <meta name="description" content="Hello, WebVR! • A-Frame" />
+    <meta charset="utf-8">
+
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+   <script src="https://unpkg.com/aframe-spe-particles-component@1.0.4/dist/aframe-spe-particles-component.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <!-- Loading Assets  -->
+      <a-a-assets>
+        <a-asset-item id="waves" src="assets/ocean_wave_-__wmaya/scene.gltf"></a-asset-item>
+        <a-asset-item id="boat1" src="assets/chinese_junk_ship/scene.gltf"></a-asset-item>
+      </a-a-assets> 
+      
+      <a-sky color="black"> 
+
+        <a-scene id="scene">
+          <a-entity position="-20 20 -25"
+          spe-particles=
+          "color: yellow, ;
+          distribution: sphere;
+          randomize-velocity: true;
+          radius: 0.5;
+          particle-count: 500;
+          velocity: 3;
+          velocity-spread: 0.5;
+          drag: 0;
+          max-age: 1.5;
+          duration: -1,
+          blending: additive;
+          active-multiplier: 1000;
+          size: 1 1 1 1 1 "
+          >
+      </a-entity>
+
+      <a-scene id="scene">
+        <a-entity position="5 20 -25"
+        spe-particles=
+        "color: #FF2400, #32CD32, #FF6700, #DC143C, #FF007F ;
+        distribution: sphere;
+        randomize-velocity: true;
+        radius: 0.5;
+        particle-count: 500;
+        velocity: 3;
+        velocity-spread: 0.3;
+        drag: 0;
+        max-age: 1.5;
+        duration: -1,
+        blending: additive;
+        active-multiplier: 1000;
+        size: 0.5 0.5 0.5 0.5 0.5 "
+        >
+    </a-entity>
+
+        <!-- BG scene -->
+      <a-box id="background-scene" src="assets/background.jpg" position="0 13 -28" width="70" height="32"> </a-box>
+
+      <!--Boats-->
+      <a-box scale="1 1 1" gltf-model="#boat1" position=" 10 6 -26.5" rotation="0 90 -10"></a-box>
+      <a-box scale="0.7 0.7 0.7" gltf-model="#boat1" position=" -15 9 -27" rotation="15 90 -10"></a-box>
+
+    </a-sky>
+    
+      <!-- CAMERA -->
+      <a-camera look-controls-enabled wasd-controls-enabled position="0 13 -8"> </a-camera>
+ 
+    </a-scene>
+  </body>
+</html>
